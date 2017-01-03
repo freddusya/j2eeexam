@@ -25,4 +25,5 @@ Reference:
 * https://docs.spring.io/docs/Spring-MVC-step-by-step/
 
 
-Author: fernando.karnagi-c@ctc-g.com.sg
+Author: fkarnagi@gmail.com
+

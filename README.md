@@ -2,7 +2,7 @@
 
 Background:
 
-1. CTC is implementing timesheet tracking application
+1. Our client is implementing timesheet tracking application
 2. Every morning, each employee has to perform check-in, and at end of the day, check-out
 3. Every 1st of the month, team lead will login to see the table showing check-in/out time for each employee working under him/her 
 

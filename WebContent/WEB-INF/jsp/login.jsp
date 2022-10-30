@@ -35,7 +35,7 @@
 
     <div class="container">
 
-      <form class="login-form" action="<%=request.getContextPath()%>/index.html">        
+      <form class="login-form" action="<%=request.getContextPath()%>/action.ctc">        
         <div class="login-wrap">
             <p class="login-img"><i class="icon_lock_alt"></i></p>
             <div class="input-group">

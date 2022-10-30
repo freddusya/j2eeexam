@@ -6,7 +6,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>About Page</title>
 </head>
-<body>${about}
+<body>${message}
 
 	<br>
 	<br>

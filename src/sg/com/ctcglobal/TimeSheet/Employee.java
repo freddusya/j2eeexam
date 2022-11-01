@@ -1,5 +1,5 @@
-package sg.com.TimeSheet;
-import sg.com.Util.NumberUtil;
+package sg.com.ctcglobal.TimeSheet;
+import sg.com.ctcglobal.Util.NumberUtil;
 
 public class Employee implements Comparable<Employee> {
  
@@ -7,6 +7,7 @@ public class Employee implements Comparable<Employee> {
 	private long id;
 	private long roleId;
 	private boolean isCheckedIn;
+	private String userName;
 
 	public Employee(long roleId) {
 		this.id = ++internal_counter;
@@ -39,6 +40,14 @@ public class Employee implements Comparable<Employee> {
 
 	public void setCheckedIn(boolean isCheckedIn) {
 		this.isCheckedIn = isCheckedIn;
+	}
+
+	public String getUserName() {
+		return userName;
+	}
+
+	public void setUserName(String userName) {
+		this.userName = userName;
 	}
 
 	@Override

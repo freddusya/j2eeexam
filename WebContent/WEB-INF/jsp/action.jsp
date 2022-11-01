@@ -4,27 +4,39 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here (action)</title>
+<title>${employee.userName} page</title>
 </head>
 <body>
-<h1>${msg}</h1>
 
- <form action="<%=request.getContextPath()%>/timeSheet.ctc">
-             <table>
-                <tr>
-                    <td>Number of TeamLead</td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <td>Number of Staff</td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <td><input type="submit" value="Check In"/></td>
-                    <td><input type="submit" value="Check Out"/></td>
-                </tr>
-            </table>
- </form>
+	<ul class="navbar">
+		<li><a href="logout.ctc">logout</a></li>
+		<li><a href="about.ctc">about</a></li>
+	</ul>
+
+	<h2>${employee.userName}page</h2>
+	
+	<div style="color:red;">${errMsg} </div>
+	<form action="timeSheetProcess.ctc">
+		<input type="hidden" name="username" value="${employee.userName}" />
+		<input type="hidden" name="timeSheet" value="checkIn" />
+		<table>
+			<tr>
+				<td><input type="submit" value="Check In" /></td>
+
+			</tr>
+		</table>
+	</form>
+	
+	<form action="timeSheetProcess.ctc">
+		<input type="hidden" name="username" value="${employee.userName}" />
+		<input type="hidden" name="timeSheet" value="checkOut" />
+		<table>
+			<tr>
+				<td><input type="submit" value="Check Out" /></td>
+
+			</tr>
+		</table>
+	</form>
 
 </body>
 </html>

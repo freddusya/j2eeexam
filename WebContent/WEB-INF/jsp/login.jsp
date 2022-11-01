@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+    <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
+<%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html lang="en">
 <head>
@@ -32,19 +34,18 @@
 </head>
 
   <body class="login-img3-body">
-
     <div class="container">
-
-      <form class="login-form" action="<%=request.getContextPath()%>/action.ctc">        
+      <form class="login-form" action="loginProcess.ctc">        
         <div class="login-wrap">
+        	<div style="color:red;">${errMsg} </div>
             <p class="login-img"><i class="icon_lock_alt"></i></p>
             <div class="input-group">
               <span class="input-group-addon"><i class="icon_profile"></i></span>
-              <input type="text" class="form-control" placeholder="Username" autofocus>
+              <input type="text" class="form-control" name="Username" placeholder="Username" autofocus>
             </div>
             <div class="input-group">
                 <span class="input-group-addon"><i class="icon_key_alt"></i></span>
-                <input type="password" class="form-control" placeholder="Password">
+                <input type="password" class="form-control" name="Password" placeholder="Password">
             </div>
             <label class="checkbox">
                 <input type="checkbox" value="remember-me"> Remember me

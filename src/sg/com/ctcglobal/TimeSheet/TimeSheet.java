@@ -1,4 +1,4 @@
-package sg.com.TimeSheet;
+package sg.com.ctcglobal.TimeSheet;
 
 import java.util.ArrayList;
 import java.util.Date;
@@ -42,8 +42,8 @@ public class TimeSheet {
 				 checkInStatusList.push(checkinStatus);
 				 timeSheetMap.put(employee, checkInStatusList);
 			 }else {
-				 throw new Exception("Employee id: "
-				 		+ employee.getId()
+				 throw new Exception("Employee userName: "
+				 		+ employee.getUserName()
 				 		+ " Currently stil login");
 			 }
 			 
@@ -88,9 +88,9 @@ public class TimeSheet {
 				 timeSheetMap.put(employee, checkInStatusList);
 				 
 			 }else {
-				 throw new Exception("Employee id: "
-				 		+ employee.getId()
-				 		+ " Currently not yet login or already log out");
+				 throw new Exception("Employee userName:"
+				 		+ employee.getUserName()
+				 		+ " currently not yet login or already log out");
 			 }
 		}else {
 			throw new Exception("Employee id: "
@@ -100,6 +100,44 @@ public class TimeSheet {
 		
 	}
 	
+	public String toHTMLString() {
+		StringBuilder str = new StringBuilder();
+		Iterator<Entry<Employee, Stack<CheckInStatus>>> it = this.timeSheetMap.entrySet().iterator();
+		while (it.hasNext()) {
+			Entry<Employee, Stack<CheckInStatus>> e = it.next();
+			str.append("<h3>"
+					+ e.getKey().getUserName()
+					+ "</h3>"
+					+ "<table>\r\n"
+					+ "  <tr>\r\n"
+					+ "    <th>Check In / Out Time</th>\r\n"
+					+ "  </tr>\r\n"
+					+ "  <tr>\r\n"
+					+ "    <td></td>\r\n");
+					
+			str.append(listAllElements(e.getValue()));
+					
+			str.append("</tr>\r\n"
+					+ "</table>");
+			
+		}
+		return str.toString();
+			
+	}
+	
+	private String listAllElements(Stack<CheckInStatus> stack) {
+		StringBuilder str = new StringBuilder();
+		for(CheckInStatus c : stack) {
+			str.append("<tr><td>"
+					+ c.getCheckIndateTime()
+					+ " / "
+					+ c.getCheckOutDateTime()
+					+ "</td>\r\n</tr>\r\n");
+		}
+		
+		return str.toString();
+	}
+
 	@Override
 	public String toString() {
 		StringBuilder str = new StringBuilder();
@@ -125,9 +163,9 @@ public class TimeSheet {
 	
 	public static void main(String[] args) throws Exception {
 		TeamLead lead = new TeamLead();
-		Staff staff = new Staff();
-		Staff staff2 = new Staff();
-		Staff staff3 = new Staff();
+		Staff staff = new Staff("staff1");
+		Staff staff2 = new Staff("staff2");
+		Staff staff3 = new Staff("staff3");
 		System.out.println(lead);
 		System.out.println(staff);
 		System.out.println(staff2);

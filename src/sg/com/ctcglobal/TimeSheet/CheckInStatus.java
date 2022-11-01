@@ -1,4 +1,4 @@
-package sg.com.TimeSheet;
+package sg.com.ctcglobal.TimeSheet;
 
 import java.util.Date;
 

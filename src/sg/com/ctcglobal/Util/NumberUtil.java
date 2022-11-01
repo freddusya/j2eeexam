@@ -1,4 +1,4 @@
-package sg.com.Util;
+package sg.com.ctcglobal.Util;
 
 import java.text.DecimalFormat;
 
